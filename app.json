@@ -10,10 +10,12 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.harsha2427.HITTrackerApp",
+      "bundleIdentifier": "com.harsha2427.HITTrackerAppV2",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSMotionUsageDescription": "This app uses motion sensors to track and analyze hits."
+      },
+      "appleTeamId": "7S2CLYKQPX"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +25,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.harsha2427.HITTrackerApp",
+      "permissions": [
+        "BODY_SENSORS"
+      ]
     },
     "web": {
       "output": "static",
@@ -44,7 +50,13 @@
         }
       ],
       "react-native-fast-tflite",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "RepSenseP needs motion data to track your HIT variations."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
